@@ -1,0 +1,19 @@
+version: '3.1'
+
+services:
+  ivanfretes-web:
+    image: ghost:4-alpine
+    restart: always
+    ports:
+        - 2367:2368
+    volumes:
+      - ./content:/var/lib/ghost/content
+    environment: 
+      url: http://0.0.0.0:2367
+      NODE_ENV: production
+      
+
+volumes:
+  certs:
+  ghostdb:
+  ghostdata:
